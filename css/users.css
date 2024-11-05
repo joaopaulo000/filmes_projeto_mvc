@@ -1,0 +1,792 @@
+:root{
+    --bg-color: #1a1a1a; 
+    --primary-color: #ffffff; 
+    --secondary-color: #333333;
+    --text-color: #f5f5f5; 
+    --link-color: #dcdcdc;
+    --structure-bg: #222222; 
+    --section-bg: #2a2a2a; 
+    --input-bg: #444444; 
+    --border-color: #555555; 
+    --second-bg-color: #0a0a0a; 
+}
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-size: 10px;
+    /* user-select: none; */
+}
+
+::-webkit-scrollbar {
+    width: 22px; /* Largura da barra de rolagem vertical */
+}
+  
+  /* Estiliza a trilha da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: var(--border-color); /* Cor de fundo da trilha */
+    overflow: hidden;
+}
+  
+  /* Estiliza o thumb (parte rolante) da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Cor do thumb */
+    border-radius: 10px; 
+    border: 3px solid var(--secondary-color); /* Adiciona borda ao thumb para criar espaço entre o thumb e a trilha */
+}
+  
+  /* Estiliza o thumb quando está sendo clicado */
+::-webkit-scrollbar-thumb:active {
+    background: var(--link-color); /* Cor do thumb quando clicado */
+}
+  
+  /* Estiliza o thumb quando está com hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color); /* Cor do thumb quando está com hover */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.displaynone{
+    display: none !important; 
+}
+
+#backtop{
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    top:98.5%;
+    left:98.5%;
+    transform: translate(-98.5%,-98.5%);
+    transition: .3s ease-in-out;
+    cursor:pointer;
+    /* display: none; */
+}
+
+/* #backtop:hover{
+    background-color: #242323;
+    border: 3px solid var(--color-primary-100);
+    color: var(--color-primary-100);
+
+} */
+
+#backtop i{
+    font-size: 5rem;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/* --------------------------------------------------------HEADER CONFIGURAÇÕES -------------------------------------------------------- */
+
+header{
+    width: 100%;
+    height: 65vh;
+}
+
+section#carrossel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+}
+
+#imagem {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#imagem #img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#imagem #img > img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+#botoes {
+    width: 100%;
+    height: 20vh;
+    position: relative;
+    top: -70%;
+    transform: translate(0%, 70%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: ease-in-out 0.6s;
+    z-index: 3;
+}
+
+#botoes .btn_nav {
+    width: 6.2vw;
+    height: 6.2vw;
+    border-radius: 50%;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: rgba(0, 0, 0, 1);
+    user-select: none;
+}
+
+#botoes .btn_nav i{
+    font-size: 3.5vw;
+    position: relative;
+    top:50%;
+    transform: translate(0,-50%);
+}
+
+#imagem:hover > #botoes {
+    opacity: 1;
+}
+
+#imgs {
+    display: none;
+}
+
+/* --------------------------------------------------------HEADER CONFIGURAÇÕES -------------------------------------------------------- */
+
+/* --------------------------------------------------------NAV CONFIGURAÇÕES -------------------------------------------------------- */
+nav{
+    width: 100%;
+    height: 8vh;
+    background-color:var(--second-bg-color);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    border-bottom: 2px solid var(--color-primary-600);
+}
+
+nav #logo{
+    width: 4.5vw;
+    height: 7vh;
+    margin-inline: 1rem;
+    padding: 5px;
+}
+
+nav #logo a{
+    color: var(--text-color);
+}
+
+nav #logo a i{
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+}
+
+nav #links{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav #links a{
+    font-size: 2.75rem;
+    margin-inline: 3.25rem;
+    letter-spacing: .35rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-color);
+    position: relative;
+}
+
+nav #links a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* left:0; */ /* para começar no inicio */
+    left:50%; /* para começar no meio */
+    width:0%;
+    height:2px;
+    background-color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+nav #links a:hover::after{
+     left:0;
+     width: 100%;
+     border-radius: 20%;
+}
+
+nav #log_opts{
+    width: 15%;
+    margin-inline: 10px;
+}
+
+nav #log_opts .opcao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 12px;
+    border-radius: 25px;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
+
+nav #log_opts .opcao i{
+    font-size: 3rem;
+    margin-inline: .5rem;
+    
+}
+
+nav #log_opts .opcao p{
+    font-family: var(--main_font);
+    font-size: 2.75rem;
+    letter-spacing: .2rem;
+    margin-inline: .5rem;
+    font-weight: 700;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+#closeform{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#closeform i{
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+#userOptions {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#userOptions img {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 80px; 
+    right: 0;
+    background-color: var(--structure-bg);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    right: 10px; 
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--structure-bg) transparent;
+}
+
+.dropdown-menu p{
+    font-size: 2.75rem;
+    color: var(--link-color);
+    border-bottom: 2px solid var(--border-color);
+    padding: 10px;
+    white-space: nowrap;
+    margin-block: 15px;
+}
+
+.dropdown-menu p span{
+    font-size: 2.3rem;
+    color: var(--link-color);
+}
+.dropdown-menu li {
+    list-style-type: none;
+}
+
+.dropdown-menu li a {
+    color: var(--link-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 2.5rem;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a i{
+    font-size: 2.3rem;
+    margin-right: 10px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* --------------------------------------------------------NAV CONFIGURAÇÕES -------------------------------------------------------- */
+
+#main_container{
+    width: 75%;
+    height: 70vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    flex-direction: column;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    box-shadow: 8px 5px 2px 1px rgba(0, 0, 0, 0.2);
+    border: 6px solid var(--second-bg-color);
+    border-radius: 25px;
+    padding: 30px;
+    gap: 1.75rem;
+}
+
+#container_forms{
+    width: 100%;
+    max-height: 75vh;
+    overflow: hidden;
+}
+
+@keyframes showLoginForm {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes hideLoginForm {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes showCriarForm {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes hideCriarForm {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+
+.show_login {
+  display: flex;
+  animation: showLoginForm 0.45s forwards;
+}
+
+.hide_login {
+  animation: hideLoginForm 0.45s forwards;
+}
+
+.show_criar {
+  display: flex;
+  animation: showCriarForm 0.45s forwards;
+}
+
+.hide_criar {
+  animation: hideCriarForm 0.45s forwards;
+}
+
+#login_form, #criar_form{
+    max-height: 75vh;
+    justify-content: center;
+    align-items: center;
+    transition: max-width 0.45s linear;
+    overflow: hidden;
+}
+
+#login{
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form_items{
+    width: 100%;
+}
+
+label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    margin-block-end: 5px;
+    color: var(--second-bg-color);
+    font-weight: 600;
+    letter-spacing: .125rem;
+}
+
+input[type=text],input[type=email],input[type=password]{
+    font-size: 1.8rem;
+    outline: none;
+    border:none;
+    border-radius:10px;
+    padding-inline: 10px;
+    padding-block: 5px;
+    width: 100%;
+}
+
+label , input{
+    display: block;
+}
+
+input[type="submit"]{
+    width: 100%;
+    font-size: 1.8rem;
+    border-radius:10px;
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+small{
+    color: red;
+    display: block;
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+
+#message{
+    width: 100%;
+    height: 55vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    gap:40px;
+    border-radius: 0 90px 90px 0;
+}
+
+#message p{
+    font-size: 3rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+}
+
+#message span{
+    font-size: 1.8rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: var(--link-color);
+}
+
+#message button{
+    width: 85%;
+    font-size: 1.8rem;
+    border-radius:10px;
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    padding: 10px 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+#message button, span, p{
+    margin-left: 30px;
+    
+}
+
+#create{
+    width: 100%;
+    height: 55vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+#login , #create{
+    gap:30px;
+    padding: 30px;
+}
+
+@keyframes showform {
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+/* --------------------------------------------------------NAV CONFIGURAÇÕES -------------------------------------------------------- */
+
+/* --------------------------------------------------------MAIN CONFIGURAÇÕES -------------------------------------------------------- */
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 50vh;
+}
+
+section {
+    background-color: var(--section-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-block: 15px;
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+
+
+.container_midias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.midia {
+    background-color: var(--structure-bg);
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.midia img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.midia p {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin: 0;
+}
+
+.midia h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.showMidia {
+    background-color: var(--section-bg);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    width: 75%;
+    z-index: 3;
+    display: none; /* ocultando por padrão */
+}
+
+/* Estilos para o ícone de fechar */
+#closeShowMidia {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#fechar_midia{
+    color: var(--link-color);
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+
+/* Estilos para a seção de informações */
+.informacoes {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para a div .imagem */
+.imagem{
+    width: 400px;
+}
+.imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para a div .detalhes */
+.detalhes {
+    flex: 1;
+}
+
+.informacoes h3{
+    font-size: 20px;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sinopse {
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+/* Estilos para a seção de comentários */
+.comentarios {
+    margin-top: 20px;
+}
+
+.comentario_container {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.user_comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user_comment img {
+    max-width: 40px;
+    border-radius: 50%;
+}
+
+.user {
+    font-weight: bold;
+}
+
+.comentario {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--primary-color);
+    resize: vertical;
+    min-height: 100px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--link-color);
+}
+
+button[type="submit"] {
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 20px;
+    float: right;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--second-bg-color);
+    color: var(--primary-color);
+}
+
+/* -------------------------------------------------------- MAIN CONFIGURAÇÕES -------------------------------------------------------- */
+
+/* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
+
+footer{
+    width: 100%;
+    height: 20vh;
+    background-color: var(--second-bg-color);
+}
+
+/* -------------------------------------------------------- FOOTER -------------------------------------------------------- */
+
