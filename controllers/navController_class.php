@@ -1,7 +1,6 @@
 <?php
 
-
-class StartController{
+class NavController{
     public function index(){
             require_once 'php/functions.php';
 
@@ -11,6 +10,14 @@ class StartController{
 
             require_once 'views/pages/main_page.php';
         }
-    }
 
+
+        public function sign_in(){
+            require_once 'views/pages/sign_in.php';
+        }
+
+        public function sign_up(){
+            require_once 'views/pages/sign_up.php';
+        }
+    }
 ?>

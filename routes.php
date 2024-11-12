@@ -24,8 +24,11 @@
         }
     }
 
-    Route::get('/', [StartController::class,'index']);
-
-
-    Route::post('/create_user',[UserController::class, 'create_user'])
+    //get routes
+    Route::get('/', [NavController::class,'index']);
+    Route::get('/sign_in', [NavController::class,'sign_in']);
+    Route::get('/sign_up', [NavController::class,'sign_up']);
+    
+    //post routes
+    Route::post('/create_user',[UserController::class, 'create_user']);
 ?>
