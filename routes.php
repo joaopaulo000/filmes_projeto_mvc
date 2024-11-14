@@ -30,5 +30,6 @@
     Route::get('/sign_up', [NavController::class,'sign_up']);
     
     //post routes
-    Route::post('/create_user',[UserController::class, 'create_user']);
-?>
+    Route::post('/sign_up',[UserController::class, 'create_user']);
+    Route::post('/sign_in',[UserController::class, 'sign_in']);
+    ?>

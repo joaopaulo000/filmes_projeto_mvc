@@ -15,7 +15,7 @@
             <span>Não tem uma conta? Clique no botão abaixo para criar uma!</span>
             <button id="GoToRegister">Criar uma conta</button>
         </div> -->
-        <form id="login" method="post" action="index.php">
+        <form id="login" method="post" action="">
             <small></small>
             <div class="form_items">
                 <label for="">Login:</label>

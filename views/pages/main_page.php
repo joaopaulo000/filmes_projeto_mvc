@@ -1,36 +1,3 @@
-<?php 
-    session_start();
-?>
-<!-- criação da conta e auto login -->
-<?php
-
-   
-?> 
-<!-- login -->
-<?php
-    if($_POST){
-        $warning_login = '';
-        $error = false;
-        if(empty($_POST['input_login']) ||  empty($_POST['senha_login'])){
-            $error = true;
-            $warning_login = 'Verifique as informações de login.';
-        }
-
-        if($error === false){
-            $user = new User(0, nome: '', username: $_POST['input_login'], email: '', senha: md5($_POST['senha_login']));
-            $userDAO = new UserDAO();
-
-
-            $user_login = login($user->get_username(),$user->get_senha());
-
-            if($user_login){
-                header('Location: index.php');
-                exit;
-            }
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -1,3 +1,5 @@
+<?php  print_r($_SESSION);?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +47,7 @@
                     <p><?= $_SESSION['nome']; ?> <span>(<?= $_SESSION['username']?>)</span></p>
                     <li><a href=""><i class="fa-solid fa-user-edit"></i> Editar perfil</a></li>
                     <li><a href=""><i class="fa-solid fa-heart"></i> Favoritos</a></li>
-                    <li><a href="logout.php"><i class="fa-solid fa-right-to-bracket"></i> Sair</a></li>
+                    <li><a href="/filmes_projeto_mvc/logout"><i class="fa-solid fa-right-to-bracket"></i> Sair</a></li>
                 </ul>
             </div>
         <?php endif; ?>
