@@ -24,18 +24,11 @@
             <a href="series.php">Séries</a>
             <a href="animes.php">Animes</a>
             <?php if(isset($_SESSION['perfil']) && $_SESSION['perfil']=== 'administrador'):?>
-                <a href="adm/admin.php">Admin</a>
+                <a href="/filmes_projeto_mvc/adm">Admin</a>
             <?php endif;?>
         </div>
         
         <?php if(empty($_SESSION['username'])): ?>
-<!--             <div id="log_opts">
-                <div id="login_btn" class="opcao">
-                    <i class="fa-regular fa-user"></i>
-                    <i class="fa-solid fa-user"></i>
-                    <p>Criar/Login</p>
-                </div>
-            </div> -->
             <div id="acc_opts">
                 <a href="/filmes_projeto_mvc/sign_in">Sign In</a>
                 <a href="/filmes_projeto_mvc/sign_up">Sign Up</a>

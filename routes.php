@@ -28,6 +28,7 @@
     Route::get('/', [NavController::class,'index']);
     Route::get('/sign_in', [NavController::class,'sign_in']);
     Route::get('/sign_up', [NavController::class,'sign_up']);
+    Route::get('/adm', [NavController::class,'adm']);
     
     //post routes
     Route::post('/sign_up',[UserController::class, 'create_user']);

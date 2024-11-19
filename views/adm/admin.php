@@ -1,6 +1,6 @@
 <?php
     require_once 'verify_adm.php';
-    require_once '../../php/functions.php';
+    require_once 'php/functions.php';
 
     $userDAO = new UserDAO();
 
@@ -18,13 +18,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administração</title>
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <header class="adm">
         <div class="logo">Logo</div>
         <h1>Administração do site</h1>
-        <a href="../logout.php">Sair</a>
+        <a href="/filmes_projeto_mvc/logout">Sair</a>
         
     </header>
     
@@ -206,7 +206,7 @@
 
                                     </tr>
                                 <?php endforeach;?>    
-                                <!-- Adicione mais linhas conforme necessário -->
+                           
                             </tbody>
                         </table>
                     </div>
@@ -224,7 +224,7 @@
                                     </tr>
                                 <?php endforeach;?>  
                     
-                                <!-- Adicione mais linhas conforme necessário -->
+                         
                             </tbody>
                         </table>
                     </div>
@@ -251,7 +251,7 @@
 
                                     </tr>
                                 <?php endforeach;?>    
-                                <!-- Adicione mais linhas conforme necessário -->
+                             
                             </tbody>
                         </table>
                     </div>
@@ -268,8 +268,6 @@
                                         <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
                                     </tr>
                                 <?php endforeach;?>  
-                    
-                                <!-- Adicione mais linhas conforme necessário -->
                             </tbody>
                         </table>
                     </div>
@@ -279,6 +277,6 @@
     <footer>
         &copy; João Paulo - projeto de navegação e interação
     </footer>
-    <script src="../../javascript/script.js"></script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>

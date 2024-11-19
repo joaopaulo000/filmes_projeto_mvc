@@ -10,12 +10,6 @@
 <?php require_once 'nav.php';?>
 
     <div id="sign_up">
-<!--         <div id="message">
-            <p>Seja bem-vindo ao nosso site!</p>
-            <span>Já tem uma conta? Clique no botão abaixo para efetuar o login</span>
-            <button id="GoToLogin">Ir para login</button>
-        </div> -->
-
         <form id="create" method="post" action="">
             <div class="form_items">
                 <label for="">Nome completo:</label>

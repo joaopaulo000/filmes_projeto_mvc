@@ -51,6 +51,8 @@ class UserController {
                 if(empty($_POST['input_login']) ||  empty($_POST['senha_login'])){
                     $error = true;
                     $warning_login = 'Verifique as informações de login.';
+
+                    require_once 'views/pages/sign_in.php';
                 }
         
                 if($error === false){
@@ -71,6 +73,10 @@ class UserController {
                         $_SESSION['username'] = $user_login[0]->username;
                         $_SESSION['perfil'] = $user_login[0]->perfil;
   
+                    }else{
+                        $warning_login = 'Verifique as informações de login.';
+
+                        require_once 'views/pages/sign_in.php';
                     }
                     header('Location: /filmes_projeto_mvc/');
                 }

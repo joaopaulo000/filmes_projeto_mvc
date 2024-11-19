@@ -19,5 +19,9 @@ class NavController{
         public function sign_up(){
             require_once 'views/pages/sign_up.php';
         }
+
+        public function adm(){
+            require_once 'views/adm/admin.php';
+        }
     }
 ?>
