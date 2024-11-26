@@ -7,13 +7,18 @@
         public function insert_comentario($comentario){
             $query = 'insert into comentarios (comentario,id_usuario,id_midia) values (?,?,?)';
 
-            $stm = $this->db->prepare($query);
-
-            $stm->bindValue(1,$comentario->get_comentario());
-            $stm->bindValue(2,$comentario->get_user()->get_id());
-            $stm->bindValue(3,$comentario->get_midia()->get_id());
-
-            $stm->execute();
+            try{
+                $stm = $this->db->prepare($query);
+    
+                $stm->bindValue(1,$comentario->get_comentario());
+                $stm->bindValue(2,$comentario->get_user()->get_id());
+                $stm->bindValue(3,$comentario->get_midia()->get_id());
+    
+                $stm->execute();
+            }catch(PDOException $e){
+                return 'Erro ao inserir comentário.';
+                $this->db = null;
+            }
 
             $this->db = null;
         }
