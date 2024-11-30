@@ -21,6 +21,18 @@ class NavController{
         }
 
         public function adm(){
+
+            require_once 'php/functions.php';
+
+            $userDAO = new UserDAO();
+        
+            $users = $userDAO->getAllUsers();
+        
+            $midias = AllMidias();
+            $categorias = AllCategorias();
+            $temporadas = AllTemporadas();
+            $generos = AllGeneros();
+            
             require_once 'views/adm/admin.php';
         }
     }

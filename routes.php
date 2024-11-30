@@ -29,8 +29,12 @@
     Route::get('/sign_in', [NavController::class,'sign_in']);
     Route::get('/sign_up', [NavController::class,'sign_up']);
     Route::get('/adm', [NavController::class,'adm']);
+    Route::get('/adm/formCategoria', [CategoriaController::class,'form']);
+    Route::get('/adm/formGenero', [GeneroController::class,'form']);
     
     //post routes
     Route::post('/sign_up',[UserController::class, 'create_user']);
     Route::post('/sign_in',[UserController::class, 'sign_in']);
+    Route::post('/adm/formCategoria', [CategoriaController::class, 'insert']);
+    Route::post('/adm/formGenero', [GeneroController::class, 'insert']);
     ?>

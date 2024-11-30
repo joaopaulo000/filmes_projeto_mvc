@@ -1,15 +1,6 @@
 <?php
     require_once 'verify_adm.php';
-    require_once 'php/functions.php';
 
-    $userDAO = new UserDAO();
-
-    $users = $userDAO->getAllUsers();
-
-    $midias = AllMidias();
-    $categorias = AllCategorias();
-    $temporadas = AllTemporadas();
-    $generos = AllGeneros();
 ?>
 
 <!DOCTYPE html>

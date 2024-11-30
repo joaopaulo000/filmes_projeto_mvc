@@ -1,30 +1,9 @@
-<?php
-    require_once '../../models/connect.php';
-    require_once '../../models/categoria_class.php';
-    require_once '../../models/categoriaDAO.php';
-
-    $warning = '';
-
-    if($_POST){
-
-        if(empty($_POST['descricao_categoria'])){
-            $warning = 'Esse campo deve ser preenchido!';
-        }else{
-            $categoria = new Categoria(id_categoria:0,descricao:trim($_POST['descricao_categoria']));
-            $categoriaDAO = new CategoriaDAO();
-
-            $categoriaDAO->insert_categoria($categoria);
-        }
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/forms.css">
+    <link rel="stylesheet" href="css/forms.css">
     <title>Cadastro de Categorias</title>
 </head>
 <body>

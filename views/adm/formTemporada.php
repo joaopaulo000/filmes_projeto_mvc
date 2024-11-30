@@ -3,19 +3,7 @@
     require_once '../../models/temporada_class.php';
     require_once '../../models/temporadaDAO.php';
 
-    $warning = '';
 
-    if($_POST){
-
-        if(empty($_POST['descricao_temporada'])){
-            $warning = 'Esse campo deve ser preenchido!';
-        }else{
-            $temporada = new Temporada(id_temporada:0,descricao:trim($_POST['descricao_temporada']));
-            $temporadaDAO = new TemporadaDAO();
-
-            $temporadaDAO->insert_temporada($temporada);
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
