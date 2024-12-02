@@ -1,3 +1,5 @@
+<?php print_r($midia);?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +10,19 @@
 </head>
 <body>
     <form action="" method="post" enctype="multipart/form-data">
-        <h1>Cadastro de Midias</h1>
-        <a href="/filmes_projeto_mvc/adm">Voltar</a>
+        <h1>Editar Midia</h1>
+        <a href="admin.php">Voltar</a>
         
+        <input type="hidden" name="id_midia" value="<?php echo $midia[0]->id_midia;?>">
         <div class="row">
             <label for="titulo">Título:</label>
-            <input type="text" name="titulo" id="titulo" value="<?php echo isset($_POST['titulo']) ? htmlspecialchars($_POST['titulo']) : ''; ?>">
+            <input type="text" name="titulo" id="titulo" value="<?php echo isset($_POST['titulo']) ? htmlspecialchars($_POST['titulo']) : $midia[0]->titulo; ?>">
             <small><?php echo isset($warnings[0]) ? $warnings[0] : ''; ?></small>
         </div>
 
         <div class="row">
             <label for="sinopse">Sinopse:</label>
-            <textarea name="sinopse" id="sinopse"><?php echo isset($_POST['sinopse']) ? htmlspecialchars($_POST['sinopse']) : ''; ?></textarea>
+            <textarea name="sinopse" id="sinopse"><?php echo isset($_POST['sinopse']) ? htmlspecialchars($_POST['sinopse']) : $midia[0]->sinopse; ?></textarea>
             <small><?php echo isset($warnings[1]) ? $warnings[1] : ''; ?></small>
         </div>
 
@@ -30,7 +33,8 @@
                     <select name="select_generos" id="select_generos">
                         <option value="0">Escolha um gênero</option>
                         <?php foreach ($generos as $gen): ?>
-                            <option value="<?= $gen->id_genero; ?>" <?php echo isset($_POST['select_generos']) && $_POST['select_generos'] == $gen->id_genero ? 'selected' : ''; ?>>
+                            <option value="<?= $gen->id_genero; ?>" 
+                                <?= isset($midia->id_genero) && $midia->id_genero == $gen->id_genero ? 'selected' : '' ?>>
                                 <?= htmlspecialchars($gen->descricao); ?>
                             </option>
                         <?php endforeach; ?>
@@ -73,6 +77,7 @@
         <div class="row">
             <label for="imagem_midia">Imagem:</label>
             <input type="file" name="imagem_midia" id="imagem_midia" accept="image/png, image/jpeg">
+            <input type="hidden" name="img_db" value="<? echo $midia[0]->imagem?>">
             <small><?php echo isset($warnings[5]) ? $warnings[5] : ''; ?></small>
         </div>
 

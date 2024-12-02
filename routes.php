@@ -28,13 +28,20 @@
     Route::get('/', [NavController::class,'index']);
     Route::get('/sign_in', [NavController::class,'sign_in']);
     Route::get('/sign_up', [NavController::class,'sign_up']);
+    Route::get('/logout', [UserController::class,'logout']);
     Route::get('/adm', [NavController::class,'adm']);
     Route::get('/adm/formCategoria', [CategoriaController::class,'form']);
     Route::get('/adm/formGenero', [GeneroController::class,'form']);
+    Route::get('/adm/formTemporada', [TemporadaController::class,'form']);
+    Route::get('/adm/formMidia', [MidiaController::class,'form']);
+    Route::get('/adm/editMidia', [MidiaController::class,'get_edit']);
     
     //post routes
     Route::post('/sign_up',[UserController::class, 'create_user']);
     Route::post('/sign_in',[UserController::class, 'sign_in']);
     Route::post('/adm/formCategoria', [CategoriaController::class, 'insert']);
     Route::post('/adm/formGenero', [GeneroController::class, 'insert']);
+    Route::post('/adm/formTemporada', [TemporadaController::class, 'insert']);
+    Route::post('/adm/formMidia', [MidiaController::class, 'insert']);
+    Route::post('/adm/editMidia', [MidiaController::class, 'update']);
     ?>

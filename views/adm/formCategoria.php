@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="../css/forms.css">
     <title>Cadastro de Categorias</title>
 </head>
 <body>
     <form action="" method="post">
         <h1>Cadastro de Categorias</h1>
-        <a href="admin.php">Voltar</a>
+        <a href="/filmes_projeto_mvc/adm">Voltar</a>
         <input type="hidden" name="input_id_categoria" value="">
 
         <div class="row">

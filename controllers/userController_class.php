@@ -84,6 +84,10 @@ class UserController {
 
         }
 
+        public function logout(){
+            require_once 'views/pages/logout.php';
+        }
+
     }
 
 ?>

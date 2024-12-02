@@ -56,7 +56,7 @@
                                         <td><?= $user->perfil?></td>
                                     </tr>
                                 <?php endforeach;?>    
-                                <!-- Adicione mais linhas conforme necessário -->
+                               
                             </tbody>
                         </table>
                     </div>
@@ -70,11 +70,14 @@
                             <tbody>
                                 <?php foreach($users as $user):?>
                                     <tr>
-                                        <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
+                                        <td>
+                                            <a href="/filmes_projeto_mvc/adm/edit_user" class="button edit">Editar</a>
+                                            <a href="" class="button status_inative">Inativar</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach;?>  
                     
-                                <!-- Adicione mais linhas conforme necessário -->
+                               
                             </tbody>
                         </table>
                     </div>
@@ -83,7 +86,7 @@
 
             <section class="table_sql" id="midias">
                 <h2>Mídias</h2>
-                <a href="formMidia.php">Novo +</a>
+                <a href="/filmes_projeto_mvc/adm/formMidia" class="new">Novo +</a>
                 <div class="table_container">
 
                     <div class="scroll_table">
@@ -107,7 +110,7 @@
                                         <td><?= $midia->temporada?></td>
                                     </tr>
                                 <?php endforeach;?>    
-                                <!-- Adicione mais linhas conforme necessário -->
+          
                                 </tbody>
                             </table>
                         </div>
@@ -121,11 +124,13 @@
                                 <tbody>
                                     <?php foreach($midias as $midia):?>
                                         <tr>
-                                            <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
+                                            <td>
+                                                <a href="/filmes_projeto_mvc/adm/editMidia?id=<?=$midia->id_midia;?>" class="button edit">Editar</a>
+                                                <a class="button status_inative">Inativar</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach;?>  
                         
-                                    <!-- Adicione mais linhas conforme necessário -->
                                 </tbody>
                             </table>
                         </div>
@@ -134,7 +139,7 @@
 
             <section class="table_sql" id="categorias">
                 <h2>Categorias</h2>
-                <a href="formCategoria.php">Novo +</a>
+                <a href="/filmes_projeto_mvc/adm/formCategoria" class="new">Novo +</a>
                 <div class="table_container">
                     <div class="scroll_table">
                         <table>
@@ -152,7 +157,7 @@
 
                                     </tr>
                                 <?php endforeach;?>    
-                                <!-- Adicione mais linhas conforme necessário -->
+          
                             </tbody>
                         </table>
                     </div>
@@ -166,11 +171,14 @@
                             <tbody>
                                 <?php foreach($categorias as $cat):?>
                                     <tr>
-                                        <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
+                                        <td>
+                                            <a class="button edit">Editar</a>
+                                            <a class="button status_inative">Inativar</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach;?>  
                     
-                                <!-- Adicione mais linhas conforme necessário -->
+          
                             </tbody>
                         </table>
                     </div>
@@ -179,7 +187,7 @@
 
             <section class="table_sql" id="generos">
                 <h2>Gêneros</h2>
-                <a href="formGenero.php">Novo +</a>
+                <a href="/filmes_projeto_mvc/adm/formGenero" class="new">Novo +</a>
                 <div class="table_container">
                     <div class="scroll_table">
                         <table>
@@ -211,7 +219,10 @@
                             <tbody>
                                 <?php foreach($generos as $gen):?>
                                     <tr>
-                                        <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
+                                        <td>
+                                            <a class="button edit">Editar</a>
+                                            <a class="button status_inative">Inativar</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach;?>  
                     
@@ -224,7 +235,7 @@
 
             <section class="table_sql" id="temporadas">
                 <h2>Temporadas</h2>
-                <a href="formTemporada.php">Novo +</a>
+                <a href="/filmes_projeto_mvc/adm/formTemporada" class="new">Novo +</a>
                 <div class="table_container">
                     <div class="scroll_table">
                         <table>
@@ -256,7 +267,10 @@
                             <tbody>
                                 <?php foreach($temporadas as $temp):?>
                                     <tr>
-                                        <td><button class="edit">Editar</button><button class="status_inative">Inativar</button></td>
+                                        <td>   
+                                            <a href="" class="button edit">Editar</a>
+                                            <a href="" class="button status_inative">Inativar</a>
+                                        </td>
                                     </tr>
                                 <?php endforeach;?>  
                             </tbody>

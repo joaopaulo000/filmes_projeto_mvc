@@ -2,6 +2,7 @@
     class CategoriaController{
 
         public function form(){
+            $warning = '';
             require_once 'views/adm/formCategoria.php';
         }
         

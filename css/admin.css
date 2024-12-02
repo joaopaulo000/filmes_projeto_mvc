@@ -135,11 +135,11 @@ nav a:hover:not(.activelink) {
 /* Cartões */
 
 
-button {
+.button{
   background-color: var(--primary-color);
   color: var(--background-color);
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 0.3s ease;
@@ -149,6 +149,7 @@ button {
   font-weight: bold;
   border: 3px solid var(--background-color);
   letter-spacing: 2px;
+  text-align: center;
 }
 
 .edit{
@@ -193,7 +194,7 @@ section.table_sql h2 {
   border-radius: 20px;
 }
 
-section.table_sql a {
+section.table_sql .new {
   background-color: #266e04;
   color: var(--primary-color);
   padding: 10px 20px;
@@ -259,7 +260,7 @@ table, th, td {
 }
 
 th, td {
-  padding: 26.8px 15px;
+  padding: 26px 15px;
   text-align: left;
   font-size: 20px;
   white-space: nowrap;
@@ -278,12 +279,16 @@ td {
 
 .fixed_column th{
   border-radius: 0px 20px 0px 0px;
+  padding: 26px 15px;
+
 }
 .fixed_column td{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 14px;
+  padding: 15.5px 15px;
+  font-size: 20px;
+ /*  padding-block: 14px; */
 }
 
 /* Responsividade */
