@@ -280,7 +280,7 @@
             </section> 
         </div>
     <footer>
-        &copy; João Paulo - projeto de navegação e interação
+        &copy; João Paulo
     </footer>
     <script src="javascript/script.js"></script>
 </body>

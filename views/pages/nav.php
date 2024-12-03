@@ -1,5 +1,3 @@
-<?php  print_r($_SESSION);?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +33,7 @@
             </div>
         <?php else: ?>
             <div id="userOptions" class="dropdown">
-                <img src="../imgs/default_profile.png" alt="User Profile" class="dropdown-toggle">
+                <img src="imgs/default_profile.png" alt="User Profile" class="dropdown-toggle">
                 <ul class="dropdown-menu">
                     <p><?= $_SESSION['nome']; ?> <span>(<?= $_SESSION['username']?>)</span></p>
                     <li><a href=""><i class="fa-solid fa-user-edit"></i> Editar perfil</a></li>

@@ -1,5 +1,3 @@
-<?php print_r($midia);?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,7 @@
 <body>
     <form action="" method="post" enctype="multipart/form-data">
         <h1>Editar Midia</h1>
-        <a href="admin.php">Voltar</a>
+        <a href="/filmes_projeto_mvc/adm">Voltar</a>
         
         <input type="hidden" name="id_midia" value="<?php echo $midia[0]->id_midia;?>">
         <div class="row">
